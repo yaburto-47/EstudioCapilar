@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Peluquería Estilo Perfecto</title>
+    <title>Estudio Capilar Ester</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -94,11 +94,27 @@
         </div>
     </main>
 
-    <script>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+        import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyABS0xu4fXOcA8ddx6qRNfv0ERPB_golyw",
+            authDomain: "estudiocapilarester.firebaseapp.com",
+            projectId: "estudiocapilarester",
+            storageBucket: "estudiocapilarester.appspot.com",
+            messagingSenderId: "755011731459",
+            appId: "1:755011731459:web:6d906902bbbf8a1d898e36",
+            measurementId: "G-0VC1TMJLYS"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
         const formulario = document.getElementById('formulario');
         const listaCitas = document.getElementById('listaCitas');
 
-        formulario.addEventListener('submit', function(e) {
+        formulario.addEventListener('submit', async (e) => {
             e.preventDefault();
 
             const nombre = document.getElementById('nombre').value;
@@ -107,13 +123,25 @@
             const fecha = document.getElementById('fecha').value;
             const hora = document.getElementById('hora').value;
 
-            const cita = document.createElement('div');
-            cita.classList.add('cita');
-            cita.innerHTML = `<strong>${nombre}</strong> (${telefono})<br>${servicio} - ${fecha} a las ${hora}`;
+            try {
+                const docRef = await addDoc(collection(db, "citas"), {
+                    nombre,
+                    telefono,
+                    servicio,
+                    fecha,
+                    hora
+                });
 
-            listaCitas.appendChild(cita);
+                const cita = document.createElement('div');
+                cita.classList.add('cita');
+                cita.innerHTML = `<strong>${nombre}</strong> (${telefono})<br>${servicio} - ${fecha} a las ${hora}`;
+                listaCitas.appendChild(cita);
 
-            formulario.reset();
+                formulario.reset();
+            } catch (error) {
+                alert("Error al guardar la cita: " + error);
+                console.error("Error al agregar documento: ", error);
+            }
         });
     </script>
 </body>
