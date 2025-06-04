@@ -1,158 +1,182 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estudio Capilar Ester</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 1rem;
-        }
-        main {
-            padding: 2rem;
-        }
-        form {
-            background-color: white;
-            padding: 2rem;
-            border-radius: 8px;
-            max-width: 500px;
-            margin: auto;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        input, select, button {
-            display: block;
-            width: 100%;
-            margin-bottom: 1rem;
-            padding: 0.5rem;
-            font-size: 1rem;
-        }
-        button {
-            background-color: #5cb85c;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #4cae4c;
-        }
-        .citas {
-            margin-top: 2rem;
-            background: white;
-            padding: 1rem;
-            border-radius: 8px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .cita {
-            border-bottom: 1px solid #ddd;
-            padding: 0.5rem 0;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estudio Capilar Ester</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff5f7;
+      color: #4b2c2c;
+    }
+    header {
+      background-color: #800020;
+      color: white;
+      text-align: center;
+      padding: 1.5rem 1rem;
+    }
+    main {
+      padding: 2rem 1rem;
+    }
+    form {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 8px;
+      max-width: 500px;
+      margin: 2rem auto;
+      box-shadow: 0 2px 8px rgba(128, 0, 32, 0.2);
+    }
+    input, select, button {
+      display: block;
+      width: 100%;
+      margin-bottom: 1rem;
+      padding: 0.75rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      background-color: #800020;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover {
+      background-color: #a8324e;
+    }
+    .citas, .servicios, .ubicacion {
+      background-color: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      max-width: 600px;
+      margin: 2rem auto;
+      box-shadow: 0 2px 8px rgba(128, 0, 32, 0.2);
+    }
+    .cita {
+      border-bottom: 1px solid #eee;
+      padding: 0.75rem 0;
+    }
+    h2 {
+      color: #800020;
+    }
+    ul {
+      list-style-type: square;
+      padding-left: 1.2rem;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Estudio Capilar Ester</h1>
-        <p>Agenda tu cita fácilmente en Chonchi</p>
-    </header>
-    <main>
-        <form id="formulario">
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" required>
+  <header>
+    <h1>Estudio Capilar Ester</h1>
+    <p>Agenda tu cita fácilmente en Chonchi</p>
+  </header>
+  <main>
+    <section class="servicios">
+      <h2>Servicios ofrecidos</h2>
+      <ul>
+        <li>Corte de pelo</li>
+        <li>Coloración</li>
+        <li>Peinado</li>
+        <li>Tratamiento capilar</li>
+      </ul>
+    </section>
 
-            <label for="telefono">Teléfono:</label>
-            <input type="tel" id="telefono" required>
+    <section class="ubicacion">
+      <h2>Dirección</h2>
+      <p><em>Por confirmar</em></p>
+    </section>
 
-            <label for="servicio">Servicio:</label>
-            <select id="servicio" required>
-                <option value="Corte de pelo">Corte de pelo</option>
-                <option value="Coloración">Coloración</option>
-                <option value="Peinado">Peinado</option>
-                <option value="Tratamiento capilar">Tratamiento capilar</option>
-            </select>
+    <form id="formulario">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" required>
 
-            <label for="fecha">Fecha:</label>
-            <input type="date" id="fecha" required>
+      <label for="telefono">Teléfono:</label>
+      <input type="tel" id="telefono" required>
 
-            <label for="hora">Hora:</label>
-            <input type="time" id="hora" required>
+      <label for="servicio">Servicio:</label>
+      <select id="servicio" required>
+        <option value="Corte de pelo">Corte de pelo</option>
+        <option value="Coloración">Coloración</option>
+        <option value="Peinado">Peinado</option>
+        <option value="Tratamiento capilar">Tratamiento capilar</option>
+      </select>
 
-            <button type="submit">Agendar cita</button>
-        </form>
+      <label for="fecha">Fecha:</label>
+      <input type="date" id="fecha" required>
 
-        <div class="citas" id="listaCitas">
-            <h2>Citas agendadas</h2>
-        </div>
-    </main>
+      <label for="hora">Hora:</label>
+      <input type="time" id="hora" required>
 
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-        import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+      <button type="submit">Agendar cita</button>
+    </form>
 
-        const firebaseConfig = {
-            apiKey: "AIzaSyABS0xu4fXOcA8ddx6qRNfv0ERPB_golyw",
-            authDomain: "estudiocapilarester.firebaseapp.com",
-            projectId: "estudiocapilarester",
-            storageBucket: "estudiocapilarester.appspot.com",
-            messagingSenderId: "755011731459",
-            appId: "1:755011731459:web:6d906902bbbf8a1d898e36",
-            measurementId: "G-0VC1TMJLYS"
-        };
+    <div class="citas" id="listaCitas">
+      <h2>Citas agendadas</h2>
+    </div>
+  </main>
 
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
-        const formulario = document.getElementById('formulario');
-        const listaCitas = document.getElementById('listaCitas');
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+    import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
-        const mostrarCitas = async () => {
-            const querySnapshot = await getDocs(collection(db, "citas"));
-            querySnapshot.forEach((doc) => {
-                const data = doc.data();
-                const cita = document.createElement('div');
-                cita.classList.add('cita');
-                cita.innerHTML = `<strong>${data.nombre}</strong> (${data.telefono})<br>${data.servicio} - ${data.fecha} a las ${data.hora}`;
-                listaCitas.appendChild(cita);
-            });
-        };
+    const firebaseConfig = {
+      apiKey: "AIzaSyABS0xu4fXOcA8ddx6qRNfv0ERPB_golyw",
+      authDomain: "estudiocapilarester.firebaseapp.com",
+      projectId: "estudiocapilarester",
+      storageBucket: "estudiocapilarester.appspot.com",
+      messagingSenderId: "755011731459",
+      appId: "1:755011731459:web:6d906902bbbf8a1d898e36",
+      measurementId: "G-0VC1TMJLYS"
+    };
 
-        formulario.addEventListener('submit', async (e) => {
-            e.preventDefault();
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+    const formulario = document.getElementById('formulario');
+    const listaCitas = document.getElementById('listaCitas');
 
-            const nombre = document.getElementById('nombre').value;
-            const telefono = document.getElementById('telefono').value;
-            const servicio = document.getElementById('servicio').value;
-            const fecha = document.getElementById('fecha').value;
-            const hora = document.getElementById('hora').value;
+    const mostrarCitas = async () => {
+      const querySnapshot = await getDocs(collection(db, "citas"));
+      listaCitas.innerHTML = '<h2>Citas agendadas</h2>';
+      querySnapshot.forEach((doc) => {
+        const data = doc.data();
+        const cita = document.createElement('div');
+        cita.classList.add('cita');
+        cita.innerHTML = `<strong>${data.nombre}</strong> (${data.telefono})<br>${data.servicio} - ${data.fecha} a las ${data.hora}`;
+        listaCitas.appendChild(cita);
+      });
+    };
 
-            try {
-                await addDoc(collection(db, "citas"), {
-                    nombre,
-                    telefono,
-                    servicio,
-                    fecha,
-                    hora
-                });
+    formulario.addEventListener('submit', async (e) => {
+      e.preventDefault();
 
-                formulario.reset();
-                listaCitas.innerHTML = '<h2>Citas agendadas</h2>';
-                mostrarCitas();
-            } catch (error) {
-                alert("Error al guardar la cita: " + error);
-                console.error("Error al agregar documento: ", error);
-            }
+      const nombre = document.getElementById('nombre').value;
+      const telefono = document.getElementById('telefono').value;
+      const servicio = document.getElementById('servicio').value;
+      const fecha = document.getElementById('fecha').value;
+      const hora = document.getElementById('hora').value;
+
+      try {
+        await addDoc(collection(db, "citas"), {
+          nombre,
+          telefono,
+          servicio,
+          fecha,
+          hora
         });
 
-        // Mostrar citas al cargar la página
+        formulario.reset();
         mostrarCitas();
-    </script>
+      } catch (error) {
+        alert("Error al guardar la cita: " + error);
+        console.error("Error al agregar documento: ", error);
+      }
+    });
+
+    mostrarCitas();
+  </script>
 </body>
 </html>
