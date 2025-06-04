@@ -172,7 +172,6 @@
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
     import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
-    import emailjs from "https://cdn.jsdelivr.net/npm/emailjs-com@3.2.0/dist/email.min.js";
 
     const firebaseConfig = {
       apiKey: "AIzaSyABS0xu4fXOcA8ddx6qRNfv0ERPB_golyw",
@@ -219,23 +218,30 @@
           hora
         });
 
-        await emailjs.send("service_xhqekcs", "template_mw5njda", {
-          nombre: nombre,
-          telefono: telefono,
-          servicio: servicio,
-          fecha: fecha,
-          hora: hora
+        // Enviar correo con EmailJS
+        emailjs.send("service_xhqekcs", "template_mw5njda", {
+          nombre,
+          telefono,
+          servicio,
+          fecha,
+          hora
         }, "6aLtDHk0uqcVNPKXc");
 
         formulario.reset();
         mostrarCitas();
       } catch (error) {
-        alert("Error al guardar o enviar la cita: " + error);
-        console.error("Error: ", error);
+        alert("Error al guardar la cita: " + error);
+        console.error("Error al agregar documento o enviar email: ", error);
       }
     });
 
     mostrarCitas();
+  </script>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("6aLtDHk0uqcVNPKXc");
+    })();
   </script>
 </body>
 </html>
