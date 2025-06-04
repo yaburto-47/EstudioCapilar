@@ -96,7 +96,7 @@
 
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-        import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+        import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
         const firebaseConfig = {
             apiKey: "AIzaSyABS0xu4fXOcA8ddx6qRNfv0ERPB_golyw",
@@ -110,9 +110,19 @@
 
         const app = initializeApp(firebaseConfig);
         const db = getFirestore(app);
-
         const formulario = document.getElementById('formulario');
         const listaCitas = document.getElementById('listaCitas');
+
+        const mostrarCitas = async () => {
+            const querySnapshot = await getDocs(collection(db, "citas"));
+            querySnapshot.forEach((doc) => {
+                const data = doc.data();
+                const cita = document.createElement('div');
+                cita.classList.add('cita');
+                cita.innerHTML = `<strong>${data.nombre}</strong> (${data.telefono})<br>${data.servicio} - ${data.fecha} a las ${data.hora}`;
+                listaCitas.appendChild(cita);
+            });
+        };
 
         formulario.addEventListener('submit', async (e) => {
             e.preventDefault();
@@ -124,7 +134,7 @@
             const hora = document.getElementById('hora').value;
 
             try {
-                const docRef = await addDoc(collection(db, "citas"), {
+                await addDoc(collection(db, "citas"), {
                     nombre,
                     telefono,
                     servicio,
@@ -132,17 +142,17 @@
                     hora
                 });
 
-                const cita = document.createElement('div');
-                cita.classList.add('cita');
-                cita.innerHTML = `<strong>${nombre}</strong> (${telefono})<br>${servicio} - ${fecha} a las ${hora}`;
-                listaCitas.appendChild(cita);
-
                 formulario.reset();
+                listaCitas.innerHTML = '<h2>Citas agendadas</h2>';
+                mostrarCitas();
             } catch (error) {
                 alert("Error al guardar la cita: " + error);
                 console.error("Error al agregar documento: ", error);
             }
         });
+
+        // Mostrar citas al cargar la página
+        mostrarCitas();
     </script>
 </body>
 </html>
