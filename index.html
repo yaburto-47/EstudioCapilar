@@ -67,6 +67,34 @@
       list-style-type: square;
       padding-left: 1.2rem;
     }
+    .galeria-servicios {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem 1rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .servicio-item {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(128, 0, 32, 0.1);
+      overflow: hidden;
+      text-align: center;
+    }
+    .servicio-item img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .servicio-item h3 {
+      margin: 0.5rem 0;
+      color: #800020;
+    }
+    .servicio-item p {
+      padding: 0 1rem 1rem;
+      font-size: 0.95rem;
+    }
   </style>
 </head>
 <body>
@@ -83,6 +111,29 @@
         <li>Peinado</li>
         <li>Tratamiento capilar</li>
       </ul>
+    </section>
+
+    <section class="galeria-servicios">
+      <div class="servicio-item">
+        <img src="https://images.unsplash.com/photo-1591047139829-460b5c14d2d6" alt="Corte de pelo">
+        <h3>Corte de pelo</h3>
+        <p>Transforma tu look con cortes modernos y personalizados según tu estilo.</p>
+      </div>
+      <div class="servicio-item">
+        <img src="https://images.unsplash.com/photo-1606115915090-be18fea418bb" alt="Coloración">
+        <h3>Coloración</h3>
+        <p>Renueva tu cabello con tintes de alta calidad y técnicas profesionales.</p>
+      </div>
+      <div class="servicio-item">
+        <img src="https://images.unsplash.com/photo-1592878849128-2c1a6e6a655e" alt="Peinado">
+        <h3>Peinado</h3>
+        <p>Peinados para eventos, bodas o simplemente para lucir espectacular.</p>
+      </div>
+      <div class="servicio-item">
+        <img src="https://images.unsplash.com/photo-1616394584760-2b1b2a582d6d" alt="Tratamiento capilar">
+        <h3>Tratamiento capilar</h3>
+        <p>Nutre, hidrata y fortalece tu cabello con nuestros tratamientos especializados.</p>
+      </div>
     </section>
 
     <section class="ubicacion">
