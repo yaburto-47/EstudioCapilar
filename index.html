@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peluquería Estilo Perfecto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+        main {
+            padding: 2rem;
+        }
+        form {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            max-width: 500px;
+            margin: auto;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        input, select, button {
+            display: block;
+            width: 100%;
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            font-size: 1rem;
+        }
+        button {
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #4cae4c;
+        }
+        .citas {
+            margin-top: 2rem;
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .cita {
+            border-bottom: 1px solid #ddd;
+            padding: 0.5rem 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Estudio Capilar Ester</h1>
+        <p>Agenda tu cita fácilmente en Chonchi</p>
+    </header>
+    <main>
+        <form id="formulario">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" required>
+
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" required>
+
+            <label for="servicio">Servicio:</label>
+            <select id="servicio" required>
+                <option value="Corte de pelo">Corte de pelo</option>
+                <option value="Coloración">Coloración</option>
+                <option value="Peinado">Peinado</option>
+                <option value="Tratamiento capilar">Tratamiento capilar</option>
+            </select>
+
+            <label for="fecha">Fecha:</label>
+            <input type="date" id="fecha" required>
+
+            <label for="hora">Hora:</label>
+            <input type="time" id="hora" required>
+
+            <button type="submit">Agendar cita</button>
+        </form>
+
+        <div class="citas" id="listaCitas">
+            <h2>Citas agendadas</h2>
+        </div>
+    </main>
+
+    <script>
+        const formulario = document.getElementById('formulario');
+        const listaCitas = document.getElementById('listaCitas');
+
+        formulario.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const nombre = document.getElementById('nombre').value;
+            const telefono = document.getElementById('telefono').value;
+            const servicio = document.getElementById('servicio').value;
+            const fecha = document.getElementById('fecha').value;
+            const hora = document.getElementById('hora').value;
+
+            const cita = document.createElement('div');
+            cita.classList.add('cita');
+            cita.innerHTML = `<strong>${nombre}</strong> (${telefono})<br>${servicio} - ${fecha} a las ${hora}`;
+
+            listaCitas.appendChild(cita);
+
+            formulario.reset();
+        });
+    </script>
+</body>
+</html>
