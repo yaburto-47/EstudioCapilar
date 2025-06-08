@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Estudio Capilar Ester</title>
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script type="module">
@@ -12,53 +12,22 @@
     body { font-family: sans-serif; background: #fff5f7; margin: 0; }
     header { background: #800020; color: white; padding: 1rem; text-align: center; }
     main { padding: 2rem 1rem; }
-    form { background: white; padding: 1.5rem; max-width: 500px; margin: auto; border-radius: 8px; box-shadow: 0 0 10px #ccc; }
-    input, select, button { width: 100%; padding: 0.75rem; margin-bottom: 1rem; }
-    button { background: #800020; color: white; border: none; cursor: pointer; font-weight: bold; }
-    .citas { max-width: 600px; margin: 2rem auto; background: white; padding: 1rem; border-radius: 8px; }
-    .galeria-servicios {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      padding: 2rem 1rem;
-      max-width: 1000px;
-      margin: auto;
-    }
-    .servicio-item {
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(128, 0, 32, 0.1);
-      overflow: hidden;
-      text-align: center;
-    }
-    .servicio-item img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-    }
-    .servicio-item h3 {
-      margin: 0.5rem 0;
-      color: #800020;
-    }
-    .servicio-item p {
-      padding: 0 1rem 1rem;
-      font-size: 0.95rem;
-    }
-    iframe {
-      display: block;
-      margin: 2rem auto;
-      border: 0;
-      width: 100%;
-      max-width: 600px;
-      height: 450px;
-    }
+    button { background: #800020; color: white; border: none; padding: 0.75rem; cursor: pointer; font-weight: bold; border-radius: 5px; margin: 2rem auto; display: block; }
+    .galeria-servicios { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; max-width: 1000px; margin: auto; }
+    .servicio-item { background: white; border-radius: 10px; box-shadow: 0 2px 10px rgba(128, 0, 32, 0.1); overflow: hidden; text-align: center; }
+    .servicio-item img { width: 100%; height: auto; display: block; }
+    .servicio-item h3 { margin: 0.5rem 0; color: #800020; }
+    .servicio-item p { padding: 0 1rem 1rem; font-size: 0.95rem; }
+    .ubicacion { max-width: 900px; margin: 2rem auto; background: white; padding: 1rem; border-radius: 8px; box-shadow: 0 0 10px #ccc; }
+    form { background: white; padding: 1.5rem; max-width: 500px; margin: auto; border-radius: 8px; box-shadow: 0 0 10px #ccc; display: none; }
+    input, select { width: 100%; padding: 0.75rem; margin-bottom: 1rem; }
+    .citas { max-width: 600px; margin: 2rem auto; background: white; padding: 1rem; border-radius: 8px; display: none; }
   </style>
 </head>
 <body>
   <header>
-    <img src="LOGO.png" alt="Logo" style="max-height: 100px; margin-bottom: 1rem;">
     <h1>Estudio Capilar Ester</h1>
-    <p>Agenda tu cita fácilmente en Chonchi</p>
+    <p>Servicios de belleza profesional en Chonchi</p>
   </header>
 
   <main>
@@ -66,46 +35,52 @@
       <div class="servicio-item">
         <img src="corte.jpg" alt="Corte de pelo">
         <h3>Corte de pelo</h3>
-        <p>Transforma tu look con cortes modernos y personalizados.</p>
+        <p>Cortes modernos y personalizados para todos los estilos.</p>
       </div>
       <div class="servicio-item">
         <img src="coloracion.jpg" alt="Coloración">
         <h3>Coloración</h3>
-        <p>Renueva tu estilo con técnicas de coloración profesionales.</p>
+        <p>Colores intensos y duraderos con técnicas profesionales.</p>
       </div>
       <div class="servicio-item">
         <img src="peinado.jpg" alt="Peinado">
         <h3>Peinado</h3>
-        <p>Ideal para eventos, celebraciones o simplemente verte increíble.</p>
+        <p>Peinados para eventos, celebraciones o uso diario.</p>
       </div>
       <div class="servicio-item">
         <img src="tratamiento.jpg" alt="Tratamiento capilar">
         <h3>Tratamiento capilar</h3>
-        <p>Repara y fortalece tu cabello con nuestras soluciones especializadas.</p>
+        <p>Repara y fortalece tu cabello con soluciones especializadas.</p>
       </div>
       <div class="servicio-item">
         <img src="visos.jpg" alt="Visos">
         <h3>Visos</h3>
-        <p>Ilumina tu cabello con mechas naturales y modernas.</p>
+        <p>Iluminaciones delicadas que realzan tu look natural.</p>
       </div>
       <div class="servicio-item">
         <img src="balayage.jpg" alt="Balayage">
         <h3>Balayage</h3>
-        <p>Una técnica francesa que da un efecto degradado natural al cabello.</p>
+        <p>Técnica moderna de coloración con degradado natural.</p>
       </div>
       <div class="servicio-item">
-        <img src="alisado.jpg" alt="Alisado con keratina">
+        <img src="keratina.jpg" alt="Alisado con keratina">
         <h3>Alisado con keratina</h3>
-        <p>Cabello liso, brillante y sin frizz por semanas.</p>
+        <p>Cabello suave, brillante y sin frizz con keratina.</p>
       </div>
       <div class="servicio-item">
         <img src="reflejos.jpg" alt="Reflejos">
         <h3>Reflejos</h3>
-        <p>Toques de luz para resaltar tu rostro y tu estilo.</p>
+        <p>Agrega dimensión y brillo a tu cabello con reflejos.</p>
       </div>
     </section>
 
-    <iframe src="https://www.google.com/maps?q=Lautaro+488,+Chonchi,+Chile&output=embed"></iframe>
+    <section class="ubicacion">
+      <h2>Dónde nos ubicamos</h2>
+      <p>Dirección: Lautaro 488, Chonchi, Chile</p>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3063.8846614922147!2d-73.81434272416674!3d-42.623302771168306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x96163711e4b2710b%3A0x3f43e17aa33867e7!2sLautaro%20488%2C%20Chonchi%2C%20Los%20Lagos!5e0!3m2!1ses-419!2scl!4v1717897340592!5m2!1ses-419!2scl" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </section>
+
+    <button onclick="mostrarFormulario()">Agendar cita</button>
 
     <form id="formulario">
       <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
@@ -122,7 +97,7 @@
       </select>
       <input type="date" id="fecha" name="fecha" required />
       <input type="time" id="hora" name="hora" required />
-      <button type="submit">Agendar cita</button>
+      <button type="submit">Agendar</button>
     </form>
 
     <div class="citas" id="listaCitas">
@@ -131,6 +106,12 @@
   </main>
 
   <script type="module">
+    function mostrarFormulario() {
+      document.getElementById('formulario').style.display = 'block';
+      document.getElementById('listaCitas').style.display = 'block';
+      window.scrollTo({ top: document.getElementById('formulario').offsetTop, behavior: 'smooth' });
+    }
+
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
     import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
@@ -170,23 +151,17 @@
       const hora = formulario.hora.value;
 
       try {
-        await addDoc(collection(db, "citas"), {
-          nombre, telefono, servicio, fecha, hora
-        });
+        await addDoc(collection(db, "citas"), { nombre, telefono, servicio, fecha, hora });
 
         await emailjs.send("service_xhqekcs", "template_mw5njda", {
-          nombre: nombre,
-          telefono: telefono,
-          servicio: servicio,
-          fecha: fecha,
-          hora: hora
+          nombre, telefono, servicio, fecha, hora
         });
 
         alert("Cita agendada correctamente");
         formulario.reset();
         mostrarCitas();
       } catch (error) {
-        console.error("Error al guardar o enviar email:", error);
+        console.error("Error:", error);
         alert("Error al procesar la cita");
       }
     });
@@ -195,3 +170,4 @@
   </script>
 </body>
 </html>
+
