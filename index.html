@@ -5,51 +5,87 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Estudio Capilar Ester</title>
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-  <script type="module">
+  <script>
     emailjs.init("6aLtDHk0uqcVNPKXc");
   </script>
   <style>
     body { font-family: sans-serif; background: #fff5f7; margin: 0; }
     header { background: #800020; color: white; padding: 1rem; text-align: center; }
-    header img { height: 100px; margin-bottom: 10px; }
     main { padding: 2rem 1rem; }
     form { background: white; padding: 1.5rem; max-width: 500px; margin: auto; border-radius: 8px; box-shadow: 0 0 10px #ccc; }
     input, select, button { width: 100%; padding: 0.75rem; margin-bottom: 1rem; }
     button { background: #800020; color: white; border: none; cursor: pointer; font-weight: bold; }
-    .citas, .galeria-servicios, .mapa { max-width: 1000px; margin: 2rem auto; background: white; padding: 1rem; border-radius: 8px; box-shadow: 0 0 10px #ccc; }
-    .galeria-servicios { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap: 1.5rem; }
+    .citas, .servicios, .ubicacion, .galeria-servicios { max-width: 1000px; margin: 2rem auto; background: white; padding: 1rem; border-radius: 8px; box-shadow: 0 0 10px #ccc; }
+    .galeria-servicios { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; }
     .servicio-item img { width: 100%; height: auto; display: block; }
-    .servicio-item { text-align: center; padding-bottom: 1rem; }
-    .mapa iframe { width: 100%; height: 350px; border: 0; }
+    .servicio-item { text-align: center; }
   </style>
 </head>
 <body>
   <header>
-    <img src="LOGO.png" alt="Logo Estudio Capilar Ester">
+    <img src="LOGO.png" alt="Logo Estudio Capilar" style="height: 100px;">
     <h1>Estudio Capilar Ester</h1>
     <p>Agenda tu cita fácilmente en Chonchi</p>
   </header>
 
   <main>
-    <section class="galeria-servicios">
-      <div class="servicio-item"><img src="corte.jpg" alt="Corte"><h3>Corte de pelo</h3></div>
-      <div class="servicio-item"><img src="coloracion.jpg" alt="Coloración"><h3>Coloración</h3></div>
-      <div class="servicio-item"><img src="peinado.jpg" alt="Peinado"><h3>Peinado</h3></div>
-      <div class="servicio-item"><img src="tratamiento.jpg" alt="Tratamiento"><h3>Tratamiento capilar</h3></div>
-      <div class="servicio-item"><img src="visos.jpg" alt="Visos"><h3>Visos</h3></div>
-      <div class="servicio-item"><img src="balayage.jpg" alt="Balayage"><h3>Balayage</h3></div>
-      <div class="servicio-item"><img src="alisado.jpg" alt="Alisado keratina"><h3>Alisado keratina</h3></div>
-      <div class="servicio-item"><img src="reflejos.jpg" alt="Reflejos"><h3>Reflejos</h3></div>
+    <section class="servicios">
+      <h2>Servicios ofrecidos</h2>
+      <ul>
+        <li>Corte de pelo</li>
+        <li>Coloración</li>
+        <li>Peinado</li>
+        <li>Tratamiento capilar</li>
+        <li>Visos</li>
+        <li>Balayage</li>
+        <li>Alisados con keratina</li>
+        <li>Reflejos</li>
+      </ul>
     </section>
 
-    <section class="mapa">
-      <h2>Ubicación</h2>
-      <iframe src="https://maps.google.com/maps?q=Lautaro+488+Chonchi+Chile&output=embed" loading="lazy"></iframe>
+    <section class="galeria-servicios">
+      <div class="servicio-item">
+        <img src="corte.jpg" alt="Corte de pelo">
+        <h3>Corte de pelo</h3>
+      </div>
+      <div class="servicio-item">
+        <img src="coloracion.jpg" alt="Coloración">
+        <h3>Coloración</h3>
+      </div>
+      <div class="servicio-item">
+        <img src="peinado.jpg" alt="Peinado">
+        <h3>Peinado</h3>
+      </div>
+      <div class="servicio-item">
+        <img src="tratamiento.jpg" alt="Tratamiento capilar">
+        <h3>Tratamiento capilar</h3>
+      </div>
+      <div class="servicio-item">
+        <img src="visos.jpg" alt="Visos">
+        <h3>Visos</h3>
+      </div>
+      <div class="servicio-item">
+        <img src="balayage.jpg" alt="Balayage">
+        <h3>Balayage</h3>
+      </div>
+      <div class="servicio-item">
+        <img src="keratina.jpg" alt="Alisado con keratina">
+        <h3>Alisado con keratina</h3>
+      </div>
+      <div class="servicio-item">
+        <img src="reflejos.jpg" alt="Reflejos">
+        <h3>Reflejos</h3>
+      </div>
+    </section>
+
+    <section class="ubicacion">
+      <h2>Dirección</h2>
+      <p>Lautaro 488, Chonchi, Chile</p>
     </section>
 
     <form id="formulario">
-      <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
-      <input type="tel" id="telefono" name="telefono" placeholder="Tu teléfono" required>
+      <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
+      <input type="tel" id="telefono" name="telefono" placeholder="Tu teléfono" required />
       <select id="servicio" name="servicio" required>
         <option value="Corte de pelo">Corte de pelo</option>
         <option value="Coloración">Coloración</option>
@@ -57,11 +93,11 @@
         <option value="Tratamiento capilar">Tratamiento capilar</option>
         <option value="Visos">Visos</option>
         <option value="Balayage">Balayage</option>
-        <option value="Alisado keratina">Alisado keratina</option>
+        <option value="Alisado con keratina">Alisado con keratina</option>
         <option value="Reflejos">Reflejos</option>
       </select>
-      <input type="date" id="fecha" name="fecha" required>
-      <input type="time" id="hora" name="hora" required>
+      <input type="date" id="fecha" name="fecha" required />
+      <input type="time" id="hora" name="hora" required />
       <button type="submit">Agendar cita</button>
     </form>
 
@@ -73,7 +109,17 @@
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
     import { getFirestore, addDoc, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
-    const firebaseConfig = {/* tu config aquí */};
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyABS0xu4fXOcA8ddx6qRNfv0ERPB_golyw",
+      authDomain: "estudiocapilarester.firebaseapp.com",
+      projectId: "estudiocapilarester",
+      storageBucket: "estudiocapilarester.appspot.com",
+      messagingSenderId: "755011731459",
+      appId: "1:755011731459:web:6d906902bbbf8a1d898e36",
+      measurementId: "G-0VC1TMJLYS"
+    };
+
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
 
