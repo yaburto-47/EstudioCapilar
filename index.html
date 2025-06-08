@@ -2,11 +2,11 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Estudio Capilar Ester</title>
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script type="module">
-    emailjs.init("6aLtDHk0uqcVNPKXc"); // Public Key
+    emailjs.init("6aLtDHk0uqcVNPKXc");
   </script>
   <style>
     body {
@@ -21,45 +21,18 @@
       text-align: center;
     }
     header img {
+      max-height: 150px;
       display: block;
-      margin: auto;
-      max-height: none;
+      margin: 0 auto 1rem;
     }
     main {
       padding: 2rem 1rem;
-    }
-    .galeria-servicios {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      max-width: 1200px;
-      margin: auto;
-    }
-    .servicio-item {
-      background: white;
-      padding: 1rem;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-    .servicio-item img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-    }
-    .servicio-item h3 {
-      color: #800020;
-    }
-    .ubicacion iframe {
-      width: 100%;
-      height: 300px;
-      border: 0;
     }
     form {
       background: white;
       padding: 1.5rem;
       max-width: 500px;
-      margin: 3rem auto;
+      margin: auto;
       border-radius: 8px;
       box-shadow: 0 0 10px #ccc;
     }
@@ -72,8 +45,8 @@
       background: #800020;
       color: white;
       border: none;
-      font-weight: bold;
       cursor: pointer;
+      font-weight: bold;
     }
     .citas {
       max-width: 600px;
@@ -86,44 +59,12 @@
 </head>
 <body>
   <header>
-    <img src="logo.png" alt="Logo Estudio Capilar Ester" />
+    <img src="96dd7dea-cca7-43ab-a831-dddb83cfdfa0.png" alt="Logo Estudio Capilar Ester">
     <h1>Estudio Capilar Ester</h1>
     <p>Agenda tu cita fácilmente en Chonchi</p>
   </header>
 
   <main>
-    <section class="galeria-servicios">
-      <div class="servicio-item">
-        <img src="corte.jpg" alt="Corte de pelo">
-        <h3>Corte de pelo</h3>
-        <p>Transforma tu look con estilo moderno y precisión.</p>
-      </div>
-      <div class="servicio-item">
-        <img src="coloracion.jpg" alt="Coloración">
-        <h3>Coloración</h3>
-        <p>Tintes profesionales para un cambio vibrante.</p>
-      </div>
-      <div class="servicio-item">
-        <img src="peinado.jpg" alt="Peinado">
-        <h3>Peinado</h3>
-        <p>Ideal para eventos y ocasiones especiales.</p>
-      </div>
-      <div class="servicio-item">
-        <img src="tratamiento.jpg" alt="Tratamiento capilar">
-        <h3>Tratamiento capilar</h3>
-        <p>Nutre y fortalece con productos especializados.</p>
-      </div>
-    </section>
-
-    <section class="ubicacion">
-      <h2 style="text-align:center; color:#800020;">Ubícanos en Chonchi</h2>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3173.9894032397157!2d-73.81397132433492!3d-42.62877862315457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x961635c7b1edb731%3A0x9c3be03dcafce14b!2sLautaro%20488%2C%20Chonchi%2C%20Los%20Lagos!5e0!3m2!1ses!2scl!4v1717785000000!5m2!1ses!2scl" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </section>
-
-    <button onclick="document.getElementById('formulario').scrollIntoView({behavior: 'smooth'})" style="display:block;margin:2rem auto;padding:1rem 2rem;font-size:1rem;background:#800020;color:white;border:none;border-radius:5px;cursor:pointer;">
-      Agendar cita
-    </button>
-
     <form id="formulario">
       <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
       <input type="tel" id="telefono" name="telefono" placeholder="Tu teléfono" required />
@@ -199,7 +140,7 @@
         formulario.reset();
         mostrarCitas();
       } catch (error) {
-        console.error("Error:", error);
+        console.error("Error al guardar o enviar email:", error);
         alert("Error al procesar la cita");
       }
     });
