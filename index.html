@@ -5,22 +5,84 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Estudio Capilar Ester</title>
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-  <script type="text/javascript">
-    emailjs.init("6aLtDHk0uqcVNPKXc");
+  <script>
+    (function() {
+      emailjs.init("6aLtDHk0uqcVNPKXc");
+    })();
   </script>
   <style>
-    body { font-family: sans-serif; background: #fff5f7; margin: 0; }
-    header { background: #800020; color: white; text-align: center; padding: 1rem; }
-    header img { max-height: 120px; margin-bottom: 1rem; }
-    main { padding: 2rem 1rem; }
-    .galeria { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-bottom: 3rem; }
-    .servicio-item { background: white; padding: 1rem; border-radius: 10px; box-shadow: 0 0 5px rgba(0,0,0,0.1); text-align: center; }
-    .servicio-item img { width: 100%; height: auto; border-radius: 5px; }
-    form { background: white; padding: 1.5rem; max-width: 500px; margin: auto; border-radius: 8px; box-shadow: 0 0 10px #ccc; }
-    input, select, button { width: 100%; padding: 0.75rem; margin-bottom: 1rem; }
-    button { background: #800020; color: white; border: none; cursor: pointer; font-weight: bold; }
-    .citas, .ubicacion { max-width: 600px; margin: 2rem auto; background: white; padding: 1rem; border-radius: 8px; }
-    .btn-ir-a-formulario { background: #800020; color: white; padding: 1rem; text-align: center; display: block; max-width: 200px; margin: 2rem auto; border-radius: 8px; text-decoration: none; font-weight: bold; }
+    body {
+      font-family: sans-serif;
+      background: #fff5f7;
+      margin: 0;
+    }
+    header {
+      background: #800020;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    header img {
+      display: block;
+      margin: 0 auto;
+      max-width: 150px;
+    }
+    main {
+      padding: 2rem 1rem;
+    }
+    .servicios {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .servicio {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(128, 0, 32, 0.1);
+      overflow: hidden;
+      text-align: center;
+    }
+    .servicio img {
+      width: 100%;
+      height: auto;
+    }
+    .servicio h3 {
+      color: #800020;
+    }
+    form {
+      background: white;
+      padding: 1.5rem;
+      max-width: 500px;
+      margin: auto;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #ccc;
+    }
+    input, select, button {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+    }
+    button {
+      background: #800020;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .citas, .ubicacion {
+      max-width: 600px;
+      margin: 2rem auto;
+      background: white;
+      padding: 1rem;
+      border-radius: 8px;
+    }
+    iframe {
+      width: 100%;
+      border: 0;
+      height: 300px;
+    }
   </style>
 </head>
 <body>
@@ -31,36 +93,48 @@
   </header>
 
   <main>
-    <section class="galeria">
-      <div class="servicio-item">
+    <section class="servicios">
+      <div class="servicio">
         <img src="corte.jpg" alt="Corte de pelo">
         <h3>Corte de pelo</h3>
-        <p>Estilo moderno y personalizado.</p>
+        <p>Transforma tu look con cortes modernos y personalizados.</p>
       </div>
-      <div class="servicio-item">
+      <div class="servicio">
         <img src="coloracion.jpg" alt="Coloración">
         <h3>Coloración</h3>
-        <p>Colores vivos y profesionales.</p>
+        <p>Renueva tu estilo con técnicas de coloración profesionales.</p>
       </div>
-      <div class="servicio-item">
+      <div class="servicio">
         <img src="peinado.jpg" alt="Peinado">
         <h3>Peinado</h3>
-        <p>Perfecto para cualquier ocasión.</p>
+        <p>Ideal para eventos, celebraciones o simplemente verte increíble.</p>
       </div>
-      <div class="servicio-item">
+      <div class="servicio">
         <img src="tratamiento.jpg" alt="Tratamiento capilar">
         <h3>Tratamiento capilar</h3>
-        <p>Nutre y fortalece tu cabello.</p>
+        <p>Repara y fortalece tu cabello con nuestras soluciones especializadas.</p>
+      </div>
+      <div class="servicio">
+        <img src="visos.jpg" alt="Visos">
+        <h3>Visos</h3>
+        <p>Aclara y resalta mechones con un look natural y moderno.</p>
+      </div>
+      <div class="servicio">
+        <img src="balayage.jpg" alt="Balayage">
+        <h3>Balayage</h3>
+        <p>Transiciones suaves de color para un estilo sofisticado.</p>
+      </div>
+      <div class="servicio">
+        <img src="keratina.jpg" alt="Alisado de keratina">
+        <h3>Alisado de keratina</h3>
+        <p>Cabello liso, suave y sin frizz por semanas.</p>
+      </div>
+      <div class="servicio">
+        <img src="reflejos.jpg" alt="Reflejos">
+        <h3>Reflejos</h3>
+        <p>Aporta luz y dimensión al cabello con reflejos bien definidos.</p>
       </div>
     </section>
-
-    <div class="ubicacion">
-      <h2>Dónde estamos</h2>
-      <p>Lautaro 488, Chonchi, Chile</p>
-      <iframe src="https://www.google.com/maps?q=Lautaro+488+Chonchi+Chile&output=embed" width="100%" height="300" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy"></iframe>
-    </div>
-
-    <a href="#formulario" class="btn-ir-a-formulario">Agendar cita</a>
 
     <form id="formulario">
       <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
@@ -70,6 +144,10 @@
         <option value="Coloración">Coloración</option>
         <option value="Peinado">Peinado</option>
         <option value="Tratamiento capilar">Tratamiento capilar</option>
+        <option value="Visos">Visos</option>
+        <option value="Balayage">Balayage</option>
+        <option value="Alisado de keratina">Alisado de keratina</option>
+        <option value="Reflejos">Reflejos</option>
       </select>
       <input type="date" id="fecha" name="fecha" required />
       <input type="time" id="hora" name="hora" required />
@@ -79,6 +157,12 @@
     <div class="citas" id="listaCitas">
       <h2>Citas agendadas</h2>
     </div>
+
+    <section class="ubicacion">
+      <h2>¿Dónde estamos?</h2>
+      <p>Lautaro 488, Chonchi, Chile</p>
+      <iframe src="https://www.google.com/maps?q=-42.627905,-73.810296&hl=es&z=18&output=embed"></iframe>
+    </section>
   </main>
 
   <script type="module">
@@ -121,10 +205,16 @@
       const hora = formulario.hora.value;
 
       try {
-        await addDoc(collection(db, "citas"), { nombre, telefono, servicio, fecha, hora });
+        await addDoc(collection(db, "citas"), {
+          nombre, telefono, servicio, fecha, hora
+        });
 
         await emailjs.send("service_xhqekcs", "template_mw5njda", {
-          nombre, telefono, servicio, fecha, hora
+          nombre,
+          telefono,
+          servicio,
+          fecha,
+          hora
         });
 
         alert("Cita agendada correctamente");
