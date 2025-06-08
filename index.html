@@ -2,110 +2,184 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Estudio Capilar Ester</title>
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-  <script>
-    (function(){
-      emailjs.init("6aLtDHk0uqcVNPKXc");
-    })();
+  <script type="module">
+    emailjs.init("6aLtDHk0uqcVNPKXc"); // Tu public key de EmailJS
   </script>
   <style>
-    body { font-family: sans-serif; background: #fff5f7; margin: 0; padding: 0; }
-    header { background: #800020; color: white; padding: 1rem; text-align: center; }
-    header img { max-height: 80px; display: block; margin: 0 auto 10px; }
-    main { padding: 2rem 1rem; max-width: 1000px; margin: auto; }
-    .galeria-servicios { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
-    .servicio-item { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-    .servicio-item img { width: 100%; height: auto; display: block; }
-    .servicio-item h3 { margin: 0.5rem; color: #800020; text-align: center; }
-    .servicio-item p { padding: 0 1rem 1rem; font-size: 0.9rem; text-align: center; }
-    .ubicacion { margin-top: 3rem; text-align: center; }
-    iframe { width: 100%; height: 300px; border: none; border-radius: 8px; }
-    .boton-cita { margin-top: 2rem; text-align: center; }
-    .boton-cita button { padding: 1rem 2rem; font-size: 1.2rem; background: #800020; color: white; border: none; cursor: pointer; border-radius: 8px; }
-    #formulario { display: none; background: white; padding: 1.5rem; margin-top: 2rem; border-radius: 8px; box-shadow: 0 0 10px #ccc; }
-    input, select, button { width: 100%; padding: 0.75rem; margin-bottom: 1rem; }
-    .citas { background: white; padding: 1.5rem; margin-top: 2rem; border-radius: 8px; }
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      background: #fff5f7;
+    }
+    header {
+      background-color: #800020;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+    header img {
+      max-width: 150px;
+      height: auto;
+      margin-bottom: 10px;
+    }
+    .servicios, .mapa {
+      max-width: 1000px;
+      margin: auto;
+      padding: 1rem;
+    }
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+    }
+    .galeria-item {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      text-align: center;
+    }
+    .galeria-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .galeria-item h3 {
+      margin: 0.5rem 0;
+      color: #800020;
+    }
+    .galeria-item p {
+      padding: 0 1rem 1rem;
+      font-size: 0.9rem;
+    }
+    .btn-agendar {
+      display: block;
+      background-color: #800020;
+      color: white;
+      text-align: center;
+      font-weight: bold;
+      padding: 1rem;
+      text-decoration: none;
+      margin: 2rem auto;
+      max-width: 200px;
+      border-radius: 8px;
+    }
+    form {
+      background: white;
+      padding: 1.5rem;
+      max-width: 500px;
+      margin: auto;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #ccc;
+    }
+    input, select, button {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      background: #800020;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .citas {
+      max-width: 600px;
+      margin: 2rem auto;
+      background: white;
+      padding: 1rem;
+      border-radius: 8px;
+    }
+    #formulario {
+      scroll-margin-top: 90px;
+    }
   </style>
 </head>
 <body>
+
   <header>
-    <img src="logo.png" alt="Logo Estudio Capilar Ester">
+    <img src="LOGO.png" alt="Logo Estudio Capilar Ester">
     <h1>Estudio Capilar Ester</h1>
-    <p>Servicios profesionales de belleza en Chonchi</p>
+    <p>Agenda tu cita fácilmente en Chonchi</p>
   </header>
 
-  <main>
-    <section class="galeria-servicios">
-      <div class="servicio-item">
+  <section class="servicios">
+    <h2>Servicios ofrecidos</h2>
+    <div class="galeria">
+      <div class="galeria-item">
         <img src="corte.jpg" alt="Corte de pelo">
         <h3>Corte de pelo</h3>
-        <p>Transforma tu estilo con cortes modernos y personalizados.</p>
+        <p>Corte moderno y personalizado.</p>
       </div>
-      <div class="servicio-item">
+      <div class="galeria-item">
         <img src="coloracion.jpg" alt="Coloración">
         <h3>Coloración</h3>
-        <p>Renueva tu look con las mejores técnicas de color.</p>
+        <p>Tintes profesionales y cuidado capilar.</p>
       </div>
-      <div class="servicio-item">
+      <div class="galeria-item">
         <img src="peinado.jpg" alt="Peinado">
         <h3>Peinado</h3>
-        <p>Para ocasiones especiales o el día a día.</p>
+        <p>Para eventos o uso diario.</p>
       </div>
-      <div class="servicio-item">
+      <div class="galeria-item">
         <img src="tratamiento.jpg" alt="Tratamiento capilar">
         <h3>Tratamiento capilar</h3>
-        <p>Recupera la vitalidad y salud de tu cabello.</p>
+        <p>Reparación, hidratación y brillo.</p>
       </div>
-      <div class="servicio-item">
+      <div class="galeria-item">
         <img src="visos.jpg" alt="Visos">
         <h3>Visos</h3>
-        <p>Luz y estilo con un toque natural.</p>
+        <p>Estilo y luminosidad natural.</p>
       </div>
-      <div class="servicio-item">
+      <div class="galeria-item">
         <img src="balayage.jpg" alt="Balayage">
         <h3>Balayage</h3>
-        <p>Técnica de color que ilumina tu rostro.</p>
+        <p>Transición suave de color.</p>
       </div>
-      <div class="servicio-item">
-        <img src="alisado.jpg" alt="Alisado con keratina">
-        <h3>Alisado con keratina</h3>
-        <p>Cabello suave, liso y sin frizz.</p>
+      <div class="galeria-item">
+        <img src="keratina.jpg" alt="Alisado keratina">
+        <h3>Alisado keratina</h3>
+        <p>Alisa y fortalece con brillo duradero.</p>
       </div>
-      <div class="servicio-item">
+      <div class="galeria-item">
         <img src="reflejos.jpg" alt="Reflejos">
         <h3>Reflejos</h3>
-        <p>Toques de luz que destacan tu melena.</p>
+        <p>Toques de luz personalizados.</p>
       </div>
-    </section>
-
-    <section class="ubicacion">
-      <h2>Dónde estamos</h2>
-      <p>Lautaro 488, Chonchi, Chile</p>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2874.107761063775!2d-73.81216832389804!3d-42.628191095327725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9616338b1d5dc169%3A0x10e1a1b0a2e3c479!2sLautaro%20488%2C%20Chonchi%2C%20Los%20Lagos!5e0!3m2!1ses!2scl!4v1710000000000" allowfullscreen></iframe>
-    </section>
-
-    <div class="boton-cita">
-      <button onclick="document.getElementById('formulario').style.display='block'; window.scrollTo({top:document.getElementById('formulario').offsetTop, behavior:'smooth'});">Agendar Cita</button>
     </div>
+  </section>
 
+  <a href="#formulario" class="btn-agendar">Agendar cita</a>
+
+  <section class="mapa">
+    <h2>¿Dónde estamos?</h2>
+    <p>Lautaro 488, Chonchi</p>
+    <iframe src="https://www.google.com/maps?q=Lautaro+488,+Chonchi,+Chile&output=embed" width="100%" height="300" style="border:0;" allowfullscreen></iframe>
+  </section>
+
+  <main>
     <form id="formulario">
-      <input type="text" name="nombre" placeholder="Tu nombre" required />
-      <input type="tel" name="telefono" placeholder="Tu teléfono" required />
-      <select name="servicio" required>
+      <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
+      <input type="tel" id="telefono" name="telefono" placeholder="Tu teléfono" required />
+      <select id="servicio" name="servicio" required>
         <option value="Corte de pelo">Corte de pelo</option>
         <option value="Coloración">Coloración</option>
         <option value="Peinado">Peinado</option>
         <option value="Tratamiento capilar">Tratamiento capilar</option>
         <option value="Visos">Visos</option>
         <option value="Balayage">Balayage</option>
-        <option value="Alisado con keratina">Alisado con keratina</option>
+        <option value="Alisado keratina">Alisado keratina</option>
         <option value="Reflejos">Reflejos</option>
       </select>
-      <input type="date" name="fecha" required />
-      <input type="time" name="hora" required />
-      <button type="submit">Enviar</button>
+      <input type="date" id="fecha" name="fecha" required />
+      <input type="time" id="hora" name="hora" required />
+      <button type="submit">Agendar cita</button>
     </form>
 
     <div class="citas" id="listaCitas">
@@ -123,12 +197,12 @@
       projectId: "estudiocapilarester",
       storageBucket: "estudiocapilarester.appspot.com",
       messagingSenderId: "755011731459",
-      appId: "1:755011731459:web:6d906902bbbf8a1d898e36"
+      appId: "1:755011731459:web:6d906902bbbf8a1d898e36",
+      measurementId: "G-0VC1TMJLYS"
     };
 
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
-
     const formulario = document.getElementById("formulario");
     const listaCitas = document.getElementById("listaCitas");
 
@@ -145,25 +219,23 @@
 
     formulario.addEventListener("submit", async (e) => {
       e.preventDefault();
-      const formData = new FormData(formulario);
+      const nombre = formulario.nombre.value;
+      const telefono = formulario.telefono.value;
+      const servicio = formulario.servicio.value;
+      const fecha = formulario.fecha.value;
+      const hora = formulario.hora.value;
 
       try {
-        await addDoc(collection(db, "citas"), Object.fromEntries(formData.entries()));
-
+        await addDoc(collection(db, "citas"), { nombre, telefono, servicio, fecha, hora });
         await emailjs.send("service_xhqekcs", "template_mw5njda", {
-          nombre: formData.get("nombre"),
-          telefono: formData.get("telefono"),
-          servicio: formData.get("servicio"),
-          fecha: formData.get("fecha"),
-          hora: formData.get("hora")
+          nombre, telefono, servicio, fecha, hora
         });
-
         alert("Cita agendada correctamente");
         formulario.reset();
         mostrarCitas();
       } catch (error) {
-        console.error("Error al guardar o enviar email:", error);
-        alert("Error al procesar la cita");
+        console.error("Error:", error);
+        alert("Hubo un error al agendar la cita");
       }
     });
 
