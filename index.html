@@ -2,86 +2,84 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Estudio Capilar Ester</title>
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-  <script type="text/javascript">
-    emailjs.init("6aLtDHk0uqcVNPKXc"); // Public key EmailJS
+  <script type="module">
+    emailjs.init("6aLtDHk0uqcVNPKXc"); // Public Key
   </script>
   <style>
-    body { font-family: sans-serif; background: #fff5f7; margin: 0; }
+    body {
+      font-family: sans-serif;
+      background: #fff5f7;
+      margin: 0;
+    }
     header {
-      background: #800020; color: white; padding: 1rem; text-align: center;
+      background: #800020;
+      color: white;
+      padding: 1rem;
+      text-align: center;
     }
     header img {
-      height: 80px;
-      margin-bottom: 0.5rem;
-    }
-    main { padding: 1rem; }
-    section { margin-bottom: 2rem; }
-
-    .servicios, .mapa {
-      max-width: 1000px;
+      display: block;
       margin: auto;
-      background: white;
-      padding: 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-height: none;
     }
-
-    .galeria {
+    main {
+      padding: 2rem 1rem;
+    }
+    .galeria-servicios {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 1.5rem;
-      margin-top: 1rem;
+      max-width: 1200px;
+      margin: auto;
     }
-
-    .galeria img {
+    .servicio-item {
+      background: white;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .servicio-item img {
       width: 100%;
       height: auto;
-      border-radius: 10px;
+      object-fit: cover;
     }
-
-    button.agendar-btn {
-      background: #800020;
-      color: white;
-      border: none;
-      padding: 1rem 2rem;
-      font-size: 1rem;
-      display: block;
-      margin: 2rem auto;
-      border-radius: 6px;
-      cursor: pointer;
+    .servicio-item h3 {
+      color: #800020;
     }
-
+    .ubicacion iframe {
+      width: 100%;
+      height: 300px;
+      border: 0;
+    }
     form {
       background: white;
       padding: 1.5rem;
       max-width: 500px;
-      margin: 2rem auto;
+      margin: 3rem auto;
       border-radius: 8px;
       box-shadow: 0 0 10px #ccc;
     }
-
     input, select, button {
       width: 100%;
       padding: 0.75rem;
       margin-bottom: 1rem;
-      font-size: 1rem;
     }
-
+    button {
+      background: #800020;
+      color: white;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
     .citas {
       max-width: 600px;
       margin: 2rem auto;
       background: white;
       padding: 1rem;
-      border-radius: 8px;
-    }
-
-    iframe {
-      width: 100%;
-      height: 300px;
-      border: none;
       border-radius: 8px;
     }
   </style>
@@ -94,55 +92,36 @@
   </header>
 
   <main>
-    <section class="servicios">
-      <h2>Servicios ofrecidos</h2>
-      <div class="galeria">
-        <div>
-          <img src="corte.jpg" alt="Corte de pelo" />
-          <p>Corte de pelo</p>
-        </div>
-        <div>
-          <img src="coloracion.jpg" alt="Coloración" />
-          <p>Coloración</p>
-        </div>
-        <div>
-          <img src="peinado.jpg" alt="Peinado" />
-          <p>Peinado</p>
-        </div>
-        <div>
-          <img src="tratamiento.jpg" alt="Tratamiento capilar" />
-          <p>Tratamiento capilar</p>
-        </div>
-        <div>
-          <img src="visos.jpg" alt="Visos" />
-          <p>Visos</p>
-        </div>
-        <div>
-          <img src="balayage.jpg" alt="Balayage" />
-          <p>Balayage</p>
-        </div>
-        <div>
-          <img src="keratina.jpg" alt="Alisado Keratina" />
-          <p>Alisado Keratina</p>
-        </div>
-        <div>
-          <img src="reflejos.jpg" alt="Reflejos" />
-          <p>Reflejos</p>
-        </div>
+    <section class="galeria-servicios">
+      <div class="servicio-item">
+        <img src="corte.jpg" alt="Corte de pelo">
+        <h3>Corte de pelo</h3>
+        <p>Transforma tu look con estilo moderno y precisión.</p>
+      </div>
+      <div class="servicio-item">
+        <img src="coloracion.jpg" alt="Coloración">
+        <h3>Coloración</h3>
+        <p>Tintes profesionales para un cambio vibrante.</p>
+      </div>
+      <div class="servicio-item">
+        <img src="peinado.jpg" alt="Peinado">
+        <h3>Peinado</h3>
+        <p>Ideal para eventos y ocasiones especiales.</p>
+      </div>
+      <div class="servicio-item">
+        <img src="tratamiento.jpg" alt="Tratamiento capilar">
+        <h3>Tratamiento capilar</h3>
+        <p>Nutre y fortalece con productos especializados.</p>
       </div>
     </section>
 
-    <section class="mapa">
-      <h2>¿Dónde nos encontramos?</h2>
-      <p>Lautaro 488, Chonchi</p>
-      <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3105.085122033196!2d-73.811111!3d-42.62999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x962329d118aa4ad3%3A0x4b2dd70b5fc5a743!2sLautaro%20488%2C%20Chonchi%2C%20Los%20Lagos!5e0!3m2!1ses!2scl!4v1717686100000"
-        allowfullscreen="" loading="lazy">
-      </iframe>
+    <section class="ubicacion">
+      <h2 style="text-align:center; color:#800020;">Ubícanos en Chonchi</h2>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3173.9894032397157!2d-73.81397132433492!3d-42.62877862315457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x961635c7b1edb731%3A0x9c3be03dcafce14b!2sLautaro%20488%2C%20Chonchi%2C%20Los%20Lagos!5e0!3m2!1ses!2scl!4v1717785000000!5m2!1ses!2scl" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </section>
 
-    <button class="agendar-btn" onclick="document.getElementById('formulario').scrollIntoView({behavior:'smooth'})">
-      Agendar Cita
+    <button onclick="document.getElementById('formulario').scrollIntoView({behavior: 'smooth'})" style="display:block;margin:2rem auto;padding:1rem 2rem;font-size:1rem;background:#800020;color:white;border:none;border-radius:5px;cursor:pointer;">
+      Agendar cita
     </button>
 
     <form id="formulario">
@@ -153,10 +132,6 @@
         <option value="Coloración">Coloración</option>
         <option value="Peinado">Peinado</option>
         <option value="Tratamiento capilar">Tratamiento capilar</option>
-        <option value="Visos">Visos</option>
-        <option value="Balayage">Balayage</option>
-        <option value="Alisado keratina">Alisado keratina</option>
-        <option value="Reflejos">Reflejos</option>
       </select>
       <input type="date" id="fecha" name="fecha" required />
       <input type="time" id="hora" name="hora" required />
@@ -178,7 +153,8 @@
       projectId: "estudiocapilarester",
       storageBucket: "estudiocapilarester.appspot.com",
       messagingSenderId: "755011731459",
-      appId: "1:755011731459:web:6d906902bbbf8a1d898e36"
+      appId: "1:755011731459:web:6d906902bbbf8a1d898e36",
+      measurementId: "G-0VC1TMJLYS"
     };
 
     const app = initializeApp(firebaseConfig);
@@ -212,14 +188,18 @@
         });
 
         await emailjs.send("service_xhqekcs", "template_mw5njda", {
-          nombre, telefono, servicio, fecha, hora
+          nombre,
+          telefono,
+          servicio,
+          fecha,
+          hora
         });
 
         alert("Cita agendada correctamente");
         formulario.reset();
         mostrarCitas();
       } catch (error) {
-        console.error("Error al guardar o enviar email:", error);
+        console.error("Error:", error);
         alert("Error al procesar la cita");
       }
     });
