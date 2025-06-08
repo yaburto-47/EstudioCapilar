@@ -2,32 +2,27 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Estudio Capilar Ester</title>
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-  <script type="module">
-    emailjs.init("6aLtDHk0uqcVNPKXc");
+  <script type="text/javascript">
+    emailjs.init("6aLtDHk0uqcVNPKXc"); // Public Key de EmailJS
   </script>
   <style>
-    body {
-      font-family: sans-serif;
-      background: #fff5f7;
-      margin: 0;
-    }
+    body { font-family: sans-serif; background: #fff5f7; margin: 0; }
     header {
       background: #800020;
       color: white;
-      padding: 1rem;
       text-align: center;
+      padding: 1.5rem 1rem;
     }
     header img {
-      max-height: 150px;
       display: block;
       margin: 0 auto 1rem;
+      max-width: 200px;
+      height: auto;
     }
-    main {
-      padding: 2rem 1rem;
-    }
+    main { padding: 2rem 1rem; }
     form {
       background: white;
       padding: 1.5rem;
@@ -59,7 +54,7 @@
 </head>
 <body>
   <header>
-    <img src="96dd7dea-cca7-43ab-a831-dddb83cfdfa0.png" alt="Logo Estudio Capilar Ester">
+    <img src="LOGO_ESTUDIO.png" alt="Logo Estudio Capilar Ester">
     <h1>Estudio Capilar Ester</h1>
     <p>Agenda tu cita fácilmente en Chonchi</p>
   </header>
@@ -73,6 +68,10 @@
         <option value="Coloración">Coloración</option>
         <option value="Peinado">Peinado</option>
         <option value="Tratamiento capilar">Tratamiento capilar</option>
+        <option value="Visos">Visos</option>
+        <option value="Balayage">Balayage</option>
+        <option value="Alisado keratina">Alisado keratina</option>
+        <option value="Reflejos">Reflejos</option>
       </select>
       <input type="date" id="fecha" name="fecha" required />
       <input type="time" id="hora" name="hora" required />
@@ -100,7 +99,6 @@
 
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
-
     const formulario = document.getElementById("formulario");
     const listaCitas = document.getElementById("listaCitas");
 
