@@ -84,7 +84,7 @@
     }
     .servicio-item img {
       width: 100%;
-      height: auto;
+      height: 180px;
       object-fit: cover;
     }
     .servicio-item h3 {
@@ -96,7 +96,6 @@
       font-size: 0.95rem;
     }
   </style>
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3.2.0/dist/email.min.js"></script>
 </head>
 <body>
   <header>
@@ -111,30 +110,11 @@
         <li>Coloración</li>
         <li>Peinado</li>
         <li>Tratamiento capilar</li>
+        <li>Visos</li>
+        <li>Balayage</li>
+        <li>Alisados con keratina</li>
+        <li>Reflejos</li>
       </ul>
-    </section>
-
-    <section class="galeria-servicios">
-      <div class="servicio-item">
-        <img src="corte.jpg" alt="Corte de pelo">
-        <h3>Corte de pelo</h3>
-        <p>Transforma tu look con cortes modernos y personalizados.</p>
-      </div>
-      <div class="servicio-item">
-        <img src="coloracion.jpg" alt="Coloración">
-        <h3>Coloración</h3>
-        <p>Renueva tu estilo con técnicas de coloración profesionales.</p>
-      </div>
-      <div class="servicio-item">
-        <img src="peinado.jpg" alt="Peinado">
-        <h3>Peinado</h3>
-        <p>Ideal para eventos, celebraciones o simplemente verte increíble.</p>
-      </div>
-      <div class="servicio-item">
-        <img src="tratamiento.jpg" alt="Tratamiento capilar">
-        <h3>Tratamiento capilar</h3>
-        <p>Repara y fortalece tu cabello con nuestras soluciones especializadas.</p>
-      </div>
     </section>
 
     <section class="ubicacion">
@@ -155,90 +135,13 @@
         <option value="Coloración">Coloración</option>
         <option value="Peinado">Peinado</option>
         <option value="Tratamiento capilar">Tratamiento capilar</option>
+        <option value="Visos">Visos</option>
+        <option value="Balayage">Balayage</option>
+        <option value="Alisados con keratina">Alisados con keratina</option>
+        <option value="Reflejos">Reflejos</option>
       </select>
 
       <label for="fecha">Fecha:</label>
       <input type="date" id="fecha" required>
 
-      <label for="hora">Hora:</label>
-      <input type="time" id="hora" required>
-
-      <button type="submit">Agendar cita</button>
-    </form>
-
-    <div class="citas" id="listaCitas">
-      <h2>Citas agendadas</h2>
-    </div>
-  </main>
-
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-    import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
-
-    const firebaseConfig = {
-      apiKey: "AIzaSyABS0xu4fXOcA8ddx6qRNfv0ERPB_golyw",
-      authDomain: "estudiocapilarester.firebaseapp.com",
-      projectId: "estudiocapilarester",
-      storageBucket: "estudiocapilarester.appspot.com",
-      messagingSenderId: "755011731459",
-      appId: "1:755011731459:web:6d906902bbbf8a1d898e36",
-      measurementId: "G-0VC1TMJLYS"
-    };
-
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app);
-    const formulario = document.getElementById('formulario');
-    const listaCitas = document.getElementById('listaCitas');
-
-    const mostrarCitas = async () => {
-      const querySnapshot = await getDocs(collection(db, "citas"));
-      listaCitas.innerHTML = '<h2>Citas agendadas</h2>';
-      querySnapshot.forEach((doc) => {
-        const data = doc.data();
-        const cita = document.createElement('div');
-        cita.classList.add('cita');
-        cita.innerHTML = `<strong>${data.nombre}</strong> (${data.telefono})<br>${data.servicio} - ${data.fecha} a las ${data.hora}`;
-        listaCitas.appendChild(cita);
-      });
-    };
-
-    emailjs.init("6aLtDHk0uqcVNPKXc");
-
-    formulario.addEventListener('submit', async (e) => {
-      e.preventDefault();
-
-      const nombre = document.getElementById('nombre').value;
-      const telefono = document.getElementById('telefono').value;
-      const servicio = document.getElementById('servicio').value;
-      const fecha = document.getElementById('fecha').value;
-      const hora = document.getElementById('hora').value;
-
-      try {
-        await addDoc(collection(db, "citas"), {
-          nombre,
-          telefono,
-          servicio,
-          fecha,
-          hora
-        });
-
-        await emailjs.send("service_xhqekcs", "template_mw5njda", {
-          nombre: nombre,
-          telefono: telefono,
-          servicio: servicio,
-          fecha: fecha,
-          hora: hora
-        });
-
-        formulario.reset();
-        mostrarCitas();
-      } catch (error) {
-        alert("Error al guardar la cita o enviar el correo: " + error);
-        console.error("Error:", error);
-      }
-    });
-
-    mostrarCitas();
-  </script>
-</body>
-</html>
+      <label for="hora">Hora:</label
