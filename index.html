@@ -11,70 +11,45 @@
   <style>
     body { font-family: sans-serif; background: #fff5f7; margin: 0; }
     header { background: #800020; color: white; padding: 1rem; text-align: center; }
+    header img { height: 100px; margin-bottom: 10px; }
     main { padding: 2rem 1rem; }
     form { background: white; padding: 1.5rem; max-width: 500px; margin: auto; border-radius: 8px; box-shadow: 0 0 10px #ccc; }
     input, select, button { width: 100%; padding: 0.75rem; margin-bottom: 1rem; }
     button { background: #800020; color: white; border: none; cursor: pointer; font-weight: bold; }
-    .citas, .galeria-servicios { max-width: 1000px; margin: 2rem auto; background: white; padding: 1rem; border-radius: 8px; box-shadow: 0 0 10px #ccc; }
-    .galeria-servicios { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+    .citas, .galeria-servicios, .mapa { max-width: 1000px; margin: 2rem auto; background: white; padding: 1rem; border-radius: 8px; box-shadow: 0 0 10px #ccc; }
+    .galeria-servicios { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap: 1.5rem; }
     .servicio-item img { width: 100%; height: auto; display: block; }
     .servicio-item { text-align: center; padding-bottom: 1rem; }
+    .mapa iframe { width: 100%; height: 350px; border: 0; }
   </style>
 </head>
 <body>
   <header>
-    <img src="LOGO.png" alt="Logo" style="max-width: 100px; display: block; margin: auto;">
+    <img src="LOGO.png" alt="Logo Estudio Capilar Ester">
     <h1>Estudio Capilar Ester</h1>
     <p>Agenda tu cita fácilmente en Chonchi</p>
   </header>
 
   <main>
     <section class="galeria-servicios">
-      <div class="servicio-item">
-        <img src="corte.jpg" alt="Corte de pelo">
-        <h3>Corte de pelo</h3>
-        <p>Transforma tu look con cortes modernos y personalizados.</p>
-      </div>
-      <div class="servicio-item">
-        <img src="coloracion.jpg" alt="Coloración">
-        <h3>Coloración</h3>
-        <p>Renueva tu estilo con técnicas de coloración profesionales.</p>
-      </div>
-      <div class="servicio-item">
-        <img src="peinado.jpg" alt="Peinado">
-        <h3>Peinado</h3>
-        <p>Ideal para eventos, celebraciones o simplemente verte increíble.</p>
-      </div>
-      <div class="servicio-item">
-        <img src="tratamiento.jpg" alt="Tratamiento capilar">
-        <h3>Tratamiento capilar</h3>
-        <p>Repara y fortalece tu cabello con nuestras soluciones especializadas.</p>
-      </div>
-      <div class="servicio-item">
-        <img src="visos.jpg" alt="Visos">
-        <h3>Visos</h3>
-        <p>Ilumina tu cabello con mechas suaves que dan un look natural y fresco.</p>
-      </div>
-      <div class="servicio-item">
-        <img src="balayage.jpg" alt="Balayage">
-        <h3>Balayage</h3>
-        <p>Técnica de coloración que da un efecto degradado moderno y elegante.</p>
-      </div>
-      <div class="servicio-item">
-        <img src="alisado.jpg" alt="Alisado keratina">
-        <h3>Alisado keratina</h3>
-        <p>Elimina el frizz y alisa tu cabello con tratamientos de keratina profesionales.</p>
-      </div>
-      <div class="servicio-item">
-        <img src="reflejos.jpg" alt="Reflejos">
-        <h3>Reflejos</h3>
-        <p>Dale brillo y dimensión a tu cabello con reflejos personalizados.</p>
-      </div>
+      <div class="servicio-item"><img src="corte.jpg" alt="Corte"><h3>Corte de pelo</h3></div>
+      <div class="servicio-item"><img src="coloracion.jpg" alt="Coloración"><h3>Coloración</h3></div>
+      <div class="servicio-item"><img src="peinado.jpg" alt="Peinado"><h3>Peinado</h3></div>
+      <div class="servicio-item"><img src="tratamiento.jpg" alt="Tratamiento"><h3>Tratamiento capilar</h3></div>
+      <div class="servicio-item"><img src="visos.jpg" alt="Visos"><h3>Visos</h3></div>
+      <div class="servicio-item"><img src="balayage.jpg" alt="Balayage"><h3>Balayage</h3></div>
+      <div class="servicio-item"><img src="alisado.jpg" alt="Alisado keratina"><h3>Alisado keratina</h3></div>
+      <div class="servicio-item"><img src="reflejos.jpg" alt="Reflejos"><h3>Reflejos</h3></div>
+    </section>
+
+    <section class="mapa">
+      <h2>Ubicación</h2>
+      <iframe src="https://maps.google.com/maps?q=Lautaro+488+Chonchi+Chile&output=embed" loading="lazy"></iframe>
     </section>
 
     <form id="formulario">
-      <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
-      <input type="tel" id="telefono" name="telefono" placeholder="Tu teléfono" required />
+      <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+      <input type="tel" id="telefono" name="telefono" placeholder="Tu teléfono" required>
       <select id="servicio" name="servicio" required>
         <option value="Corte de pelo">Corte de pelo</option>
         <option value="Coloración">Coloración</option>
@@ -85,8 +60,8 @@
         <option value="Alisado keratina">Alisado keratina</option>
         <option value="Reflejos">Reflejos</option>
       </select>
-      <input type="date" id="fecha" name="fecha" required />
-      <input type="time" id="hora" name="hora" required />
+      <input type="date" id="fecha" name="fecha" required>
+      <input type="time" id="hora" name="hora" required>
       <button type="submit">Agendar cita</button>
     </form>
 
@@ -97,18 +72,8 @@
 
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-    import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
-
-    const firebaseConfig = {
-      apiKey: "AIzaSyABS0xu4fXOcA8ddx6qRNfv0ERPB_golyw",
-      authDomain: "estudiocapilarester.firebaseapp.com",
-      projectId: "estudiocapilarester",
-      storageBucket: "estudiocapilarester.appspot.com",
-      messagingSenderId: "755011731459",
-      appId: "1:755011731459:web:6d906902bbbf8a1d898e36",
-      measurementId: "G-0VC1TMJLYS"
-    };
-
+    import { getFirestore, addDoc, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+    const firebaseConfig = {/* tu config aquí */};
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
 
@@ -116,43 +81,34 @@
     const listaCitas = document.getElementById("listaCitas");
 
     async function mostrarCitas() {
-      const querySnapshot = await getDocs(collection(db, "citas"));
       listaCitas.innerHTML = "<h2>Citas agendadas</h2>";
-      querySnapshot.forEach((doc) => {
-        const data = doc.data();
-        const cita = document.createElement("div");
-        cita.innerHTML = `<strong>${data.nombre}</strong> (${data.telefono})<br>${data.servicio} - ${data.fecha} a las ${data.hora}`;
-        listaCitas.appendChild(cita);
+      const snapshot = await getDocs(collection(db, "citas"));
+      snapshot.forEach(doc => {
+        const d = doc.data();
+        const div = document.createElement("div");
+        div.innerHTML = `<strong>${d.nombre}</strong> (${d.telefono}) — ${d.servicio} - ${d.fecha} a las ${d.hora}`;
+        listaCitas.appendChild(div);
       });
     }
 
-    formulario.addEventListener("submit", async (e) => {
+    formulario.addEventListener("submit", async e => {
       e.preventDefault();
-      const nombre = formulario.nombre.value;
-      const telefono = formulario.telefono.value;
-      const servicio = formulario.servicio.value;
-      const fecha = formulario.fecha.value;
-      const hora = formulario.hora.value;
-
+      const data = {
+        nombre: formulario.nombre.value,
+        telefono: formulario.telefono.value,
+        servicio: formulario.servicio.value,
+        fecha: formulario.fecha.value,
+        hora: formulario.hora.value
+      };
       try {
-        await addDoc(collection(db, "citas"), {
-          nombre, telefono, servicio, fecha, hora
-        });
-
-        await emailjs.send("service_xhqekcs", "template_mw5njda", {
-          nombre: nombre,
-          telefono: telefono,
-          servicio: servicio,
-          fecha: fecha,
-          hora: hora
-        });
-
+        await addDoc(collection(db, "citas"), data);
+        await emailjs.send("service_xhqekcs", "template_mw5njda", data);
         alert("Cita agendada correctamente");
         formulario.reset();
         mostrarCitas();
-      } catch (error) {
-        console.error("Error al guardar o enviar email:", error);
-        alert("Error al procesar la cita");
+      } catch (err) {
+        console.error(err);
+        alert("Error al procesar la cita.");
       }
     });
 
