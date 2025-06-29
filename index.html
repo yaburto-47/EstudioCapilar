@@ -6,7 +6,7 @@
   <title>Estudio Capilar Ester</title>
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script type="module">
-    emailjs.init("6aLtDHk0uqcVNPKXc"); // Tu public key de EmailJS
+    emailjs.init("6aLtDHk0uqcVNPKXc");
   </script>
   <style>
     body {
@@ -21,9 +21,10 @@
       padding: 1rem;
     }
     header img {
-      max-width: 150px;
-      height: auto;
-      margin-bottom: 10px;
+      width: auto;
+      height: 120px;
+      display: block;
+      margin: 0 auto 10px;
     }
     .servicios, .mapa {
       max-width: 1000px;
@@ -164,6 +165,10 @@
   </section>
 
   <main>
+    <div style="text-align:center; max-width:600px; margin:auto; margin-bottom:1rem;">
+      <p><strong>Horario de atención:</strong> Lunes a viernes de <strong>09:00 a 18:00</strong></p>
+    </div>
+
     <form id="formulario">
       <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
       <input type="tel" id="telefono" name="telefono" placeholder="Tu teléfono" required />
@@ -178,7 +183,7 @@
         <option value="Reflejos">Reflejos</option>
       </select>
       <input type="date" id="fecha" name="fecha" required />
-      <input type="time" id="hora" name="hora" required />
+      <input type="time" id="hora" name="hora" required min="09:00" max="18:00" />
       <button type="submit">Agendar cita</button>
     </form>
 
@@ -216,6 +221,18 @@
         listaCitas.appendChild(cita);
       });
     }
+
+    // Restringe días pasados y fines de semana
+    const fechaInput = document.getElementById("fecha");
+    fechaInput.addEventListener("input", function () {
+      const date = new Date(this.value);
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+      if (date < today || date.getDay() === 0 || date.getDay() === 6) {
+        alert("Solo se permiten citas de lunes a viernes en fechas futuras.");
+        this.value = "";
+      }
+    });
 
     formulario.addEventListener("submit", async (e) => {
       e.preventDefault();
