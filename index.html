@@ -39,37 +39,28 @@
     .galeria-item {
       background: white;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.15);
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
       overflow: hidden;
       text-align: center;
       min-width: 300px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      border: 2px solid #800020; /* marco bordó */
-      transition: transform 0.3s ease;
-    }
-    .galeria-item:hover {
-      transform: scale(1.03);
-      box-shadow: 0 0 15px rgba(128,0,32,0.5);
     }
     .galeria-item img {
       width: 100%;
-      height: 250px;          
-      object-fit: cover;      
+      height: 250px;
+      object-fit: cover;
+      border-bottom: 1px solid #ddd;
       display: block;
-      border-bottom: 2px solid #800020;
     }
     .galeria-item h3 {
-      margin: 0.5rem 0 0.25rem;
+      margin: 0.5rem 0;
       color: #800020;
-      font-weight: 700;
     }
     .galeria-item p {
       padding: 0 1rem 1rem;
       font-size: 0.9rem;
-      color: #333;
-      flex-grow: 1;
     }
     .btn-agendar {
       display: block;
@@ -82,11 +73,6 @@
       margin: 2rem auto;
       max-width: 200px;
       border-radius: 8px;
-      box-shadow: 0 0 10px #800020aa;
-      transition: background-color 0.3s ease;
-    }
-    .btn-agendar:hover {
-      background-color: #a00030;
     }
     form {
       background: white;
@@ -102,7 +88,6 @@
       margin-bottom: 1rem;
       border: 1px solid #ccc;
       border-radius: 4px;
-      font-size: 1rem;
     }
     button {
       background: #800020;
@@ -110,11 +95,6 @@
       border: none;
       cursor: pointer;
       font-weight: bold;
-      font-size: 1.1rem;
-      transition: background-color 0.3s ease;
-    }
-    button:hover {
-      background: #a00030;
     }
     .citas {
       max-width: 600px;
@@ -122,7 +102,6 @@
       background: white;
       padding: 1rem;
       border-radius: 8px;
-      box-shadow: 0 0 10px #ccc;
     }
     #formulario {
       scroll-margin-top: 90px;
@@ -171,12 +150,12 @@
         <p>Transición suave de color.</p>
       </div>
       <div class="galeria-item">
-        <img src="keratina.jpg" alt="Alisado keratina">
+        <img src="alisado.jpg" alt="Alisado keratina">
         <h3>Alisado keratina</h3>
         <p>Alisa y fortalece con brillo duradero.</p>
       </div>
       <div class="galeria-item">
-        <img src="reflejos.jpg" alt="Reflejos">
+        <img src="reflejos.png" alt="Reflejos">
         <h3>Reflejos</h3>
         <p>Toques de luz personalizados.</p>
       </div>
@@ -249,7 +228,6 @@
       });
     }
 
-    // Restringe días pasados y fines de semana
     const fechaInput = document.getElementById("fecha");
     fechaInput.addEventListener("input", function () {
       const date = new Date(this.value);
