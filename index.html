@@ -33,7 +33,7 @@
     }
     .galeria {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* aumento el min-width para que las imágenes no se achiquen */
       gap: 1rem;
     }
     .galeria-item {
@@ -42,11 +42,14 @@
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
       overflow: hidden;
       text-align: center;
+      min-width: 300px; /* mínimo para que no se vean muy pequeñas */
     }
     .galeria-item img {
-      width: 100%;
-      height: auto;
+      width: auto;    /* se respeta el ancho original */
+      max-width: 100%; /* para que no sobrepase el contenedor */
+      height: auto;   /* mantiene la proporción */
       display: block;
+      margin: 0 auto; /* centra la imagen */
     }
     .galeria-item h3 {
       margin: 0.5rem 0;
